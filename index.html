@@ -239,6 +239,7 @@
 						  <p><hr></p>
 							<p><code>srcset</code> allows the browser to make educated decisions on source.</p>
 							<p><code>picture</code> dictates to the browser which source we want.</p>
+							<p>Best when used for art direction or performance use cases.</p>
 						</div>
 					</section>
 					<section id="solution-picture-markup">
@@ -257,6 +258,66 @@
 						<p><strong>Media condition:</strong> stripped down media queries.</p>
 						<p><strong><code>srcset</code>:</strong> defines the source to use at this condition.</p>
 					</section>
+				</section>
+
+				<!-- Complex problems -->
+				<section id="complex-problems">
+					<h3>Complex problems, complex solutions</h3>
+					<figure>
+						<pre><code>
+<picture>
+	<!-- 16:9 crop -->
+	<source
+		type="image/webp"
+		media="(min-width: 36em)"
+		srcset="quilt_2/detail/large.webp  1920w,
+		        quilt_2/detail/medium.webp  960w,
+		        quilt_2/detail/small.webp   480w" />
+	<source
+		media="(min-width: 36em)"
+		srcset="quilt_2/detail/large.jpg  1920w,
+		        quilt_2/detail/medium.jpg  960w,
+		        quilt_2/detail/small.jpg   480w" />
+	<!-- square crop -->
+	<source
+		type="image/webp"
+		srcset="quilt_2/square/large.webp   822w,
+		        quilt_2/square/medium.webp  640w,
+		        quilt_2/square/small.webp   320w" />
+	<source
+		srcset="quilt_2/square/large.jpg   822w,
+		        quilt_2/square/medium.jpg  640w,
+		        quilt_2/square/small.jpg   320w" />
+	<img
+		src="quilt_2/detail/medium.jpg"
+		alt="Detail of the above quilt, highlighting the embroidery and exotic stitchwork." />
+</picture>
+						</code></pre>
+						<figcaption>Source: <cite><a href="http://alistapart.com/article/responsive-images-in-practice#snippet13">A List Apart</a></cite></figcaption>
+					</figure>
+				</section>
+
+				<section id="easier-way" data-background="images/easier-way.jpg">
+					<p style="color: #fff;">There is an easier way!</p>
+				</section>
+
+				<!-- Drupal solutions -->
+				<section>
+					<section id="drupal-gains">
+						<h3>Drupal FTW!</h3>
+						<p>Drupal has awesome modules to ease a lot of this complexity.</p>
+						<p><hr></p>
+						<div style="text-align: left;">
+							<p class="fragment"><strong>Image Styles:</strong> Create all the different image sizes and crops for us.</p>
+							<p class="fragment"><strong><a href="https://www.drupal.org/project/breakpoints">Breakpoints</a>:</strong> Allows you to expose site breakpoints to Drupal, and group them by components.</p>
+							<p class="fragment"><strong><a href="https://www.drupal.org/project/picture">Picture</a>:</strong> Maps image styles to breakpoints. Creates image field formatters for both <code>srcset</code> with <code>sizes</code> and <code>picture</code> element. You can define custom pixel density descriptors. And it includes <a href="http://scottjehl.github.io/picturefill/">picturefill 2 polyfill</a> for older browser support.</p>
+						</div>
+					</section>
+				</section>
+
+				<!-- demo -->
+				<section id="demo" data-background="images/demo.gif">
+					<h3 style="color: #fff;">Demo!</h3>
 				</section>
 			</div>
 		</div>
