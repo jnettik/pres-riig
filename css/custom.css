@@ -11,6 +11,21 @@
   padding: 0 0 0 20px;
 }
 
+.reveal figure {
+  margin: 20px auto;
+}
+
+.reveal figure pre {
+  margin: 0 auto;
+}
+
+.reveal figure figcaption {
+  font-size: 60%;
+  text-align: right;
+  margin: 10px auto 0;
+  width: 90%;
+}
+
 .aten-logo {
   width: 30%;
 }
