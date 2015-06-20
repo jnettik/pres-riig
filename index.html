@@ -203,6 +203,10 @@
 					<h3>The solutions</h3>
 					<p><strong>Disclaimer:</strong> This is not an in depth explaination of responsive image solutions.</p>
 					<p>There are much better resources, many of which are linked to in the resources slide.</p>
+
+					<aside class="notes">
+						Goal here is to roughly understand what we're trying to accomplish through Drupal's GUI.
+					</aside>
 				</section>
 
 				<!-- img solution -->
@@ -262,6 +266,12 @@
 							</code></pre>
 							<figcaption>Example using width, or W, descriptors<br>Source: <cite><a href="http://alistapart.com/article/responsive-images-in-practice#snippet8">A List Apart</a></cite></figcaption>
 						</figure>
+
+						<aside class="notes">
+							X descriptors tell the browser this image is suited for specific screen resolutions. This is great for fixed width images. Drupal seems to always default to this. <br>
+							W descriptors inform the browser of the width of the image sources, then use the sizes attr to provide information about how that image will be displayed.<br>
+							using that info, browser can pick more appropriate sources.
+						</aside>
 					</section>
 				</section>
 
@@ -274,7 +284,7 @@
 						  <p><hr></p>
 							<p><code>srcset</code> allows the browser to make educated decisions on source.</p>
 							<p><code>picture</code> dictates to the browser which source we want.</p>
-							<p>Best when used for art direction or performance use cases.</p>
+							<p>Best when used for art direction or browser support use cases.</p>
 						</div>
 					</section>
 					<section id="solution-picture-markup">
@@ -292,6 +302,10 @@
 						<p><br></p>
 						<p><strong>Media condition:</strong> stripped down media queries.</p>
 						<p><strong><code>srcset</code>:</strong> defines the source to use at this condition.</p>
+
+						<aside class="notes">
+							srcset is fully featured. So you can then support resolution switching on your art directed images.
+						</aside>
 					</section>
 				</section>
 
@@ -333,7 +347,7 @@
 				</section>
 
 				<section id="easier-way" data-background="images/easier-way.jpg">
-					<p style="color: #fff;">There is an easier way!</p>
+					<h3 style="color: #fff;">There is an easier way!</h3>
 				</section>
 
 				<!-- Drupal solutions -->
@@ -345,8 +359,12 @@
 						<div style="text-align: left;">
 							<p class="fragment"><strong>Image Styles:</strong> Create all the different image sizes and crops for us.</p>
 							<p class="fragment"><strong><a href="https://www.drupal.org/project/breakpoints">Breakpoints</a>:</strong> Allows you to expose site breakpoints to Drupal, and group them by components.</p>
-							<p class="fragment"><strong><a href="https://www.drupal.org/project/picture">Picture</a>:</strong> Maps image styles to breakpoints. Creates image field formatters for both <code>srcset</code> with <code>sizes</code> and <code>picture</code> element. You can define custom pixel density descriptors. And it includes <a href="http://scottjehl.github.io/picturefill/">picturefill 2 polyfill</a> for older browser support.</p>
+							<p class="fragment"><strong><a href="https://www.drupal.org/project/picture">Picture</a>:</strong> Maps image styles to breakpoints. Creates image field formatters for both <code>srcset</code> with <code>sizes</code> and <code>picture</code> element. And it includes <a href="http://scottjehl.github.io/picturefill/">picturefill 2 polyfill</a> for older browser support.</p>
 						</div>
+
+						<aside class="notes">
+							Image styles: using style guide can pre plan these styles, document them and even import them into drupal to save you a lot of time. <br>
+						</aside>
 					</section>
 				</section>
 
