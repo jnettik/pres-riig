@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Responsive Images in Drupal - DrupalCamp Colorado 2015</title>
+		<title>Responsive Images in Drupal - Design4Drupal Boston 2015</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -43,11 +43,10 @@
 			<div class="slides">
 				<section id="title">
 					<h2>Responsive Images in Drupal</h2>
-					<p><a href="http://bit.ly/riid-dcco15">bit.ly/riid-dcco15</a></p>
-					<p><a href="http://bit.ly/riid-dcco15-slides">http://bit.ly/riid-dcco15-slides</a></p>
+					<p><a href="http://bit.ly/d4d-session-page">http://bit.ly/d4d-session-page</a></p>
 					<p><hr></p>
-					<p>DrupalCamp Colorado 2015</p>
-					<p><a href="http://twitter.com/hashtag/DCCO15">#DCCO15</a></p>
+					<p>Design4Drupal Boston 2015</p>
+					<p><a href="http://twitter.com/hashtag/DCCO15">#D4DBoston</a></p>
 				</section>
 
 				<section id="speaker">
@@ -100,7 +99,7 @@
 
 					<section id="complex-content">
 						<h3>Images are complex</h3>
-						<p>At their simplest, images are small pockets of structured content.</p>
+						<p>Images are small pockets of structured content.</p>
 						<ul>
 							<li class="fragment"><code>src</code> attribute</li>
 							<li class="fragment"><code>alt</code> attribute</li>
@@ -145,7 +144,7 @@
 						<p>On top of the things mentioned above, we also need to consider...</p>
 						<ul>
 							<li class="fragment">different resolutions across screens.</li>
-							<li class="fragment">fluid layouts and changing screen sizes.
+							<li class="fragment">changing screen sizes and fluid layouts.
 								<ul class="fragment">
 									<li>changes in screen orientation as you change devices.</li>
 								</ul>
@@ -175,8 +174,7 @@
 				<!-- The solutions -->
 				<section id="solution-disclaimer">
 					<h3>The solutions</h3>
-					<p><strong>Disclaimer:</strong> This is not an in depth explaination of responsive image solutions.</p>
-					<p>There are much better resources, many of which are linked to in the resources slide.</p>
+					<p><strong>Disclaimer:</strong> This is intented to be a crash course into responsive image solutions.</p>
 
 					<aside class="notes">
 						Goal here is to roughly understand what we're trying to accomplish through Drupal's GUI.
@@ -210,7 +208,7 @@
 							</code></pre>
 						</figure>
 						<p>Attribute to inform the browser of alternate image sources.</p>
-						<p class="fragment">Best used when trying to address resolution use cases.</p>
+						<p class="fragment">Best for resolution switching on fixed width images.</p>
 					</section>
 					<section id="solution-srcset-flavors">
 						<h3><code>srcset</code> attribute</h3>
@@ -228,8 +226,8 @@
 							<pre><code>
 <img
 	srcset="quilt_3/large.jpg  1240w,
-	        quilt_3/medium.jpg  620w,
-	        quilt_3/small.jpg   310w"
+	     quilt_3/medium.jpg  620w,
+	     quilt_3/small.jpg   310w"
 	sizes="(min-width: 41.25em) 38.75em,
 	       calc(100vw - 2.5em)"
 	src="quilt_3/medium.jpg"
@@ -241,7 +239,8 @@
 						<aside class="notes">
 							X descriptors tell the browser this image is suited for specific screen resolutions. This is great for fixed width images. Drupal seems to always default to this. <br>
 							W descriptors inform the browser of the width of the image sources, then use the sizes attr to provide information about how that image will be displayed.<br>
-							using that info, browser can pick more appropriate sources.
+							using that info, browser can pick more appropriate sources.<br>
+							Mental shift. We've prioritized control. We can no longer effectively dictate images, because we can't keep up with technology anymore. We can now only describe images, and allow our designs to adapt to it's needs.
 						</aside>
 					</section>
 				</section>
@@ -282,7 +281,7 @@
 
 				<!-- Complex problems -->
 				<section id="complex-problems">
-					<h3>Complex problems, complex solutions</h3>
+					<h3>Complex problems,<br>complex solutions</h3>
 					<figure>
 						<pre><code>
 <picture>
@@ -317,8 +316,8 @@
 					</figure>
 				</section>
 
-				<section id="easier-way" data-background="images/easier-way.jpg">
-					<h3 style="color: #fff;">There is an easier way!</h3>
+				<section id="easier-way" data-background="images/easier-way.gif">
+					<h3 style="color: #fff;">There just has to be an easier way!</h3>
 				</section>
 
 				<!-- Drupal solutions -->
